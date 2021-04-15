@@ -12,5 +12,11 @@ def stand_up():
 def walk_around():
   print("you walk around looking for something")  
 
+@when("realize")
+def realize():
+  print("you realize you are in a dream you can control")  
+
+
+
 start()
 
