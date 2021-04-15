@@ -10,3 +10,7 @@ def look():
 
 start()
 
+@when("open your eyes")
+def open_eyes():
+  say("""Your eyes open, you aren't in your bedroom anymore...
+  """)
