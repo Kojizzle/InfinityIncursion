@@ -6,7 +6,7 @@ def look():
 
 @when("stand up")
 def look():
-  print("you stand up")
+  print("you stand up ")
 
 start()
 
