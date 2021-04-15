@@ -10,6 +10,6 @@ def look():
 
 start()
 
-@when("open your eyes")
+@when("walk around")
 def open():
-  print("you open your eyes")
+  print("you walk around for a while")
