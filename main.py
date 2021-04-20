@@ -1,4 +1,5 @@
 from adventurelib import *
+from module import *
 
 @when("look around")
 def look():
@@ -11,6 +12,11 @@ def look():
 @when("stand up")
 def look():
   print("you stand up")
+
+@when("walk outside")
+def go_outside():
+  set_context("outside")
+  print("You walk outside")
 
 start()
 
