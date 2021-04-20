@@ -1,5 +1,5 @@
 from adventurelib import *
-from module import *
+from character import Character
 
 @when("look around")
 def look():
