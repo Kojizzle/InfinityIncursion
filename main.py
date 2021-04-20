@@ -1,16 +1,23 @@
 from adventurelib import *
 
-@when("wake up")
-def wake_up():
-  print("you wake up")
+def check_context(func):
+  def inner():
+    if get_context() == 'shoreline':
+      func()
+    else:
+      print("You can't do that here.")
+  return inner
 
-@when("look around")
-def look():
-  print("you look around")
+set_context('shoreline')
+print("Suddenly, your nostrils are filled with the strong scent of salt water as you realize you're on an island in the middle of the ocean.")
 
 @when("stand up")
-def look():
-  print("you stand up")
+def stand_up():
+  print("You stand up.")
+
+@when("sit down")
+def stand_up():
+  print("You sit down.")
 
 start()
 
