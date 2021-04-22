@@ -1,15 +1,9 @@
 from adventurelib import *
+#name=str(input("enter your name: ")
+print("Welcome to the school pop quiz! type in START to begin, and type in HELP when you need a hint on a certain question. There are four questions. Good luck! ")
 
-@when("look around")
-def look():
-  print("you look around")
+@when("START")
 
-@when("stand up")
-def look():
-  print("you stand up")
+
 
 start()
-
-@when("walk around")
-def open():
-  print("you walk around for a while")
