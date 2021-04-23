@@ -12,4 +12,5 @@ def you_change_the_environment_around_you():
 
 @when("approach the clown", context="creepy")
 def fever_dream():
-  print(f"as you approach the clown you see he slowly fades away while waving. but before he leaves he leaves a final message,{name} you will die tomorrow at 5pm")
+  set_context("decision2")
+  print(f"as you approach the clown you see he slowly fades away while waving. but before he leaves he leaves a final message,{name} you will die tomorrow at 5pm. would you like to continue having fun or pursue the riddle?")
