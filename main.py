@@ -1,4 +1,6 @@
 from adventurelib import *
+from reactions import *
+from name import *
 
 
 @when("look around")
