@@ -22,6 +22,7 @@ def realize():
 
 @when("look at the mirror")
 def mirrored_horror():
+  set_context("decision1")
   print("you look into the mirror and see a twisted and contorted version of yourself that sends chills down your spine then it fades away you have a choice to panic and run or keep walking calmly in this bizarre world")  
 
 
