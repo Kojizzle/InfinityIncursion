@@ -40,5 +40,14 @@ def stand_up_cave():
 def sit_down_cave():
   print("You sit down on the hard rock beneath you.")
 
+@when("take the sword", context=('cave'))
+def take_sword():
+  set_context('attack')
+  print("You walk over and grab the sword. Suddenly, you hear footsteps behind you. As you turn around with the sword in hand, a black figure lunges at you. You have two options, try to dodge or swing your sword at it.")
+
+@when("dodge", context=('attack'))
+def dodge_attack():
+  print("You dodge the figure's attack.")
+
 start()
 
