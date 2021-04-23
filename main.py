@@ -2,15 +2,17 @@ from adventurelib import *
 
 @when("look around")
 def look():
-  print("you look around")
+  print("The room is dark, and the only light is coming from the main door.")
 
 @when("stand up")
 def stand_up():
-  print("you stand up")
+  print("you stand up, although when you check what you were sitting on, nothing seems to be there.")
 
-@when("walk around")
-def walk_around():
-  print("you walk around looking for something")  
+@when("inspect")
+def inspect():
+  print("You inspect the walls closer, the color is black and rusty, strange material.") 
+  
+    
 
 start()
 
