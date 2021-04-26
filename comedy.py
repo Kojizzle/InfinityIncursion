@@ -1,7 +1,9 @@
 from adventurelib import *
 name=str(input("enter your name: "))
  
- run-down-bar = Room("""
+set_context("Run down bar")
+ 
+print("""
 After a long day of running errands and back-breaking tasks, you arrive at your apartment, ready for the great unwinding. After you put the tea on the stove, you take a nice, hot shower, shave, and prepare yourself for a night of relaxation and peace. A few hours pass by and soon you surrender to your fatigue. 
 
 "Ay bartender, gimme two more of your strongest drinks"! 
@@ -19,7 +21,7 @@ Without a moment to waste, you are tied up from behind and dragged up to the ela
 
 "What do you do?"
 
-"""))
+""")
 
 @when("look around")
 @when("stand up")
@@ -39,10 +41,12 @@ def cage_door():
 @when("give ITEM to RECIPIENT")
 def give(item, recipient):
     print("You give the {item} to the {recipient} and ask for some tips.")
-
 item = "note"
 recipient = "bartender"
 
+@when("ask for tips")
+def ask_for_tips():
+  pass   
 
 
 
@@ -57,5 +61,4 @@ recipient = "bartender"
 
 
 
-start()
 
