@@ -27,11 +27,15 @@ def mirrored_horror():
 
 @when("keep having fun", context="decision2")
 def buissness_before_pleasure_peasant():
-  print(f"you decide to ignore the riddle and keep having fun until you get awoken in the real world just to see that same clown in real life. he shouts your name {name}, you shall die for your ignorance. startled you get up and run but he quickly responds and snaps your neck. is this a dream? im afraid not")
+  print(f"you decide to ignore the riddle and keep having fun until you get awoken in the real world just to see that same clown in real life. he shouts your name {name}, you shall die for your ignorance. startled you get up and run. but he quickly responds and snaps your neck. is this a dream? im afraid not")
 
 @when("follow the riddle",context="decision2")
 def wise_choice_peasant():
-  print(f"you deicde to think about what the clown said and all of a sudden the world around you starts to shift into a new reality where you can spawn anything you want but a warning in the sky shows a startling message {name} will die tomorrow by 5pm. to prevent this you must kill the clown.")
+  print(f"you deicde to think about what the clown said and all of a sudden the world around you starts to shift into a new reality where you can spawn anything you want but a warning in the sky shows a startling message {name} will die tomorrow by 5pm. to prevent this you must kill the clown. would you like to ignore the warning or fight the clown?")
+
+
+
+
 
 
 
