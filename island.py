@@ -14,7 +14,7 @@ def sit_down_shoreline():
 
 @when("look around", context=('shoreline'))
 def look_around_shoreline():
-  print("You look around and notice a cave not too far from you.")
+  print("You look around and see a cave not too far from you.")
 
 @when("enter the cave", context=('shoreline'))
 def enter_cave():
@@ -40,4 +40,11 @@ def take_sword():
 
 @when("dodge", context=('attack'))
 def dodge_attack():
-  print("You dodge the figure's attack.")
+  set_context('shoreline')
+  print("You dodge the figure's attack and run back outside with the sword in hand.")
+
+@when("swing sword", context=('attack'))
+def swing_sword():
+  set_context('???')
+  print("You swing your sword, hitting it directly. However, the sword doesn't phase it and... (?)")
+
