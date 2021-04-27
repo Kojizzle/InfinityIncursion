@@ -1,12 +1,7 @@
 from adventurelib import *
+from island import * 
 
-@when("look around")
-def look():
-  print("you look around")
 
-@when("stand up")
-def stand_up():
-  print("you stand up")
 
 @when("walk around")
 def walk_around():
