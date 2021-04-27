@@ -3,15 +3,16 @@ from reactions import *
 from name import *
 
 
-@when("look around")
+@when("look around", context="startgame")
 def look():
   print("you look around")
 
 @when("stand up")
 def stand_up():
+  set_context("startgame")
   print("you stand up")
 
-@when("walk around")
+@when("walk around", context="startgame")
 def walk_around():
   print("you walk around looking for something and you notice yourself in a strange other-worldly dimension. you look up and see other planets very close and 4 red suns")  
 
