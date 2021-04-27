@@ -2,26 +2,26 @@ from adventurelib import *
 from reactions import *
 from name import *
 
+set_context("startgame")
 
 @when("look around", context="startgame")
 def look():
   print("you look around")
 
-@when("stand up")
+@when("stand up", context="startgame")
 def stand_up():
-  set_context("startgame")
   print("you stand up")
 
 @when("walk around", context="startgame")
 def walk_around():
   print("you walk around looking for something and you notice yourself in a strange other-worldly dimension. you look up and see other planets very close and 4 red suns")  
 
-@when("realize")
+@when("realize", context="startgame")
 def realize():
   print("you realize you are in a dream you can control")
 
 
-@when("look at the mirror")
+@when("look at the mirror", context="startgame")
 def mirrored_horror():
   set_context("decision1")
   print("you look into the mirror and see a twisted and contorted version of yourself that sends chills down your spine then it fades away you have a choice to panic and run or keep walking calmly in this bizarre world")  
