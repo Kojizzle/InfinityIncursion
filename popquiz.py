@@ -1,19 +1,20 @@
 from adventurelib import *
 #name=str(input("enter your name: ")
+set_context("question")
 def restart():
   print("Welcome to the school pop quiz! type in 'begin' to begin, and type in 'hint' when you need a hint on a certain question. There are four questions. Good luck!")
 
 print(restart())
-questions= ["q1","q2","q3","q4"]
-answers= ["6.022x10^23", "4", "a3", "a4"]
-hint= ["What are the amount of atoms in a mole?", "Use addition", "q3h", "q4h"]
+questions= ["Fill in the blank: slope _____ form","what is 2 + 2?","How many world wars were there?"," is an orange a fruit or a vegetable?"]
+answers= ["intercept", "4", "2", "fruit"]
+hint= ["It includes the y ____", "Use addition", "They were in the past", "they come from trees"]
 current_q=0
 
-@when("restart")
+@when("restart", context= "question")
 def restart():
-  print("Welcome to the school pop quiz! type in 'begin' to begin, and type in 'hint' when you need a hint on a certain question. There are four questions. Good luck!")
+  print("Welcome to the school pop quiz! type in 'begin' to start, and type in 'hint' when you need a hint on a certain question. There are four questions. Good luck!")
 
-@when("begin")
+@when("begin", context = "question")
 def q1():
   print(questions[current_q])
   set_context("question")
@@ -36,6 +37,8 @@ def give_ans1(answer):
 def q2():
   print(questions[current_q])
   set_context("question")
+
+
 
 
 
