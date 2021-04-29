@@ -1,4 +1,5 @@
 from adventurelib import *
+from comedy import*
 from island import * 
 
 
