@@ -72,10 +72,10 @@ def oh_no():
   jess.nightmare = True
   mark.nightmare = True
 
-@when("go to ari", context=('your_desk'))
-@when("walk to ari", context=('your_desk'))
-@when("go to aris desk", context=('your_desk'))
-@when("walk to aris desk", context=('your_desk'))
+@when("go to ari", context='your_desk')
+@when("walk to ari", context='your_desk')
+@when("go to aris desk", context='your_desk')
+@when("walk to aris desk", context='your_desk')
 def go_ari():
   global current_room
   if ari.nightmare == False:
@@ -87,9 +87,9 @@ def go_ari():
     print(current_room)
     set_context('ari_desk')
 
-@when("ask ari if she needs help", context=('ari_desk'))
-@when("ask her if she needs help", context=('ari_desk'))
-@when("ask if she needs help", context=('ari_desk'))
+@when("ask ari if she needs help", context='ari_desk')
+@when("ask her if she needs help", context='ari_desk')
+@when("ask if she needs help", context='ari_desk')
 def ask_ari():
   global current_room
   if current_room == ari_desk:
@@ -102,14 +102,14 @@ def ask_ari():
     print("Ari isn't here!")
 
 
-@when("go to jess", context=('your_desk'))
-@when("walk to jess", context=('your_desk'))
-@when("go to the hallway", context=('your_desk'))
-@when("walk to the hallway", context=('your_desk'))
-@when("exit the classroom", context=('your_desk'))
-@when("exit the class", context=('your_desk'))
-@when("leave the classroom", context=('your_desk'))
-@when("leave the class", context=('your_desk'))
+@when("go to jess", context='your_desk')
+@when("walk to jess", context='your_desk')
+@when("go to the hallway", context='your_desk')
+@when("walk to the hallway", context='your_desk')
+@when("exit the classroom", context='your_desk')
+@when("exit the class", context='your_desk')
+@when("leave the classroom", context='your_desk')
+@when("leave the class", context='your_desk')
 def go_jess():
   global current_room
   if jess.nightmare == False:
@@ -121,12 +121,12 @@ def go_jess():
     set_context('jess_hallway')
     print(current_room)
 
-@when("ask what is in the bag", context=('jess_hallway'))
-@when("ask them what is in the bag", context=('jess_hallway'))
-@when("ask jess what is in the bag", context=('jess_hallway'))
-@when("ask what was in the bag", context=('jess_hallway'))
-@when("ask them was in the bag", context=('jess_hallway'))
-@when("ask jess what was in the bag", context=('jess_hallway'))
+@when("ask what is in the bag", context='jess_hallway')
+@when("ask them what is in the bag", context='jess_hallway')
+@when("ask jess what is in the bag", context='jess_hallway')
+@when("ask what was in the bag", context='jess_hallway')
+@when("ask them was in the bag", context='jess_hallway')
+@when("ask jess what was in the bag", context='jess_hallway')
 def ask_jess():
   global current_room
   if current_room == jess_hallway:
@@ -140,10 +140,10 @@ def ask_jess():
     print("Jess and their bag aren't here!")
 
 
-@when("go to mark", context=('your_desk'))
-@when("walk to mark", context=('your_desk'))
-@when("go to the corner", context=('your_desk'))
-@when("walk to the corner", context=('your_desk'))
+@when("go to mark", context='your_desk')
+@when("walk to mark", context='your_desk')
+@when("go to the corner", context='your_desk')
+@when("walk to the corner", context='your_desk')
 def go_mark():
   global current_room
   if mark.nightmare == False:
@@ -154,9 +154,9 @@ def go_mark():
     current_room = nightmare_corner
     print(current_room)
 
-@when("ask mark what he is reading", context=('mark_corner'))
-@when("ask him what he is reading", context=('mark_corner'))
-@when("ask what he is reading", context=('mark_corner'))
+@when("ask mark what he is reading", context='mark_corner')
+@when("ask him what he is reading", context='mark_corner')
+@when("ask what he is reading", context='mark_corner')
 def ask_mark():
   global current_room
   if current_room == mark_corner:
@@ -170,4 +170,3 @@ def ask_mark():
 
 
 start()
-
