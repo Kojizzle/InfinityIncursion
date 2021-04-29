@@ -23,30 +23,30 @@ Without a moment to waste, you are tied up from behind and dragged up to the ela
 
 """)
 
-@when("look around")
-@when("stand up")
-@when("crawl")
+@when("look around", context ='Run down bar')
+@when("stand up", context ='Run down bar')
+@when("crawl", context ='Run down bar')
 def look_around():
     print("You look around in your cage, the cold black bars looking right back at you")
 
 
-@when("empty pockets")
+@when("empty pockets", context ='Run down bar')
 def empty_pockets():
     print("You have leftover mentos and a paper that reads Don't be shy, come on out!")
 
-@when("open door")
+@when("open door", context ='Run down bar')
 def cage_door():
     print("You crawl out of the cage, stretch, and start making your way around the bar")
 
-@when("give ITEM to RECIPIENT")
+@when("give ITEM to RECIPIENT", context ='Run down bar')
 def give(item, recipient):
     print("You give the {item} to the {recipient} and ask for some tips.")
 item = "note"
 recipient = "bartender"
 
-@when("ask for tips")
-def ask_for_tips():
-  pass   
+#@when("ask for tips", context ='Run down bar")
+#def ask_for_tips():
+  #pass   
 
 
 
