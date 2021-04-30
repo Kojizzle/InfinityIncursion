@@ -1,1 +1,1 @@
-# InfinityIncursion
+# InfinityIncursion group of cool minigames
