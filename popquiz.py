@@ -37,6 +37,9 @@ def give_ans1(answer):
 def q2():
   print(questions[current_q])
   set_context("question")
+  
+# if current_q > 3:
+#   print("Congratulations, you completed the pop quiz! type in 'restart' to play again!")
 
 
 
