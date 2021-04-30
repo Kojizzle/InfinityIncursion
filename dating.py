@@ -160,7 +160,7 @@ def go_mark():
 def ask_mark():
   global current_room
   if current_room == mark_corner:
-    print("wip mark")
+    print(f"Mark looks up from his book. MARK: Oh hey! I'm just reading this stupid book for my English class. I need to get my mind of this book. Hey {name}, would you rather play sports or read books?")
     mark.book = True
   elif current_room == nightmare_corner:
     print("wip nightmare mark")
@@ -168,5 +168,3 @@ def ask_mark():
   else:
     print("Mark isn't here!")
 
-
-start()
