@@ -1,8 +1,8 @@
 from adventurelib import *
 
-from island import * 
- 
 from dating import *
-
+from popquiz import*
+from comedy import*
+from island import *   
+  
 start()
-
