@@ -1,5 +1,6 @@
 from adventurelib import *
 
+from dating import *
 from popquiz import*
 from comedy import*
 from island import *   
