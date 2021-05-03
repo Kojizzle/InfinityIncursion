@@ -44,10 +44,18 @@ def inspect():
 def take():
   obj = current_room.items.take('crowbar')
   if not obj:
-    print(f"You already took the crowbar.")
+    print(f"You already have the crowbar.")
   else:
     print(f"You took the crowbar.")
     
     
+@when("open door", context="darkroom")
+def open():
+  obj = current_room.items.take('crowbar')
+  if not obj:
+    print(f"With the help of your crowbar, you manage to open the door.")
+    
+  else:
+    print(f"The door is blocked with two nailed in wooden pallets.")
 
 
