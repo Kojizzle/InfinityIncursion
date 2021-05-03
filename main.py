@@ -1,4 +1,7 @@
 from adventurelib import *
+from room import *
+
+
 from horror import *
 
 from dating import *
