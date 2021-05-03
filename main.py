@@ -2,5 +2,11 @@ from adventurelib import *
 from room import *
 
 
-start()
+from horror import *
 
+from dating import *
+from popquiz import*
+from comedy import*
+from island import *   
+  
+start()
