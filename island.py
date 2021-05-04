@@ -94,4 +94,8 @@ def look_around():
 
 @when("walk to tree", context='shoreline3')
 def walk_tree():
-  print("""You walk over to the tree to identify that the fruit's on the tree are bananas.""")
+  print("""You walk over to the tree to identify that the fruit's on the tree are bananas. However, you'd have to climb the tree to reach them.""")
+
+@when("climb the tree", context='shoreline3')
+def climb_tree():
+  print("""You start the climb the tree, making it pretty far, but as you're climbing the tree one of the branches you grab on to suddenly snaps. You fall to the ground expecting to be met with pain but you instead keep on falling into the abyss. """)
