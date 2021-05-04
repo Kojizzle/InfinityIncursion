@@ -34,6 +34,16 @@ def buissness_before_pleasure_peasant():
 def wise_choice_peasant():
   print(f"you deicde to think about what the clown said and all of a sudden the world around you starts to shift into a new reality where you can spawn anything you want but a warning in the sky shows a startling message {name} will die tomorrow by 5pm. to prevent this you must kill the clown. would you like to ignore the warning or fight the clown?")
 
+@when("remove the clown", context="decision3")
+def game_of_wills():
+  set_context("final decision")
+  print(f"you realize you can still controll your dreams and you decide to will away the clown. the clown begins to fade away but as it fades it leaves a black void that begins consuming everything around it. you decide to wake up and you find out your house is on fire. your roomate screams your name. {name} THE HOUSE IS ON FIRE WE HAVE TO LEAVE. you get up still in a daze as smoke fills your lungs. there is a way out through your window but there is a 20 feet drop which will break some bones. you have 2 options sit and die or jump. ")
+
+@when("wake up", context="decision3")
+def death_by_blaze():
+  print(f"you wake up and a fire has consumed your bed in flams and as it begins to consume your body you realize its hopeless and you turn to your side to die. as you look at the clock before your end you see the time. 5:00PM game over {name} your dead")
+
+
 
 
 

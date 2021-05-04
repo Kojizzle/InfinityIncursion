@@ -22,4 +22,5 @@ def death_by_darkness():
 
 @when("fight the clown", context="decision2")
 def wise_but_do_you_have_what_it_takes():
+  set_context("decision3")
   print(f" as you approach the clown {name} your worst fears begin to materialize as the clown instantly has access to the most powerful weapons you can imagine and as you try hard to give yourself weapons you realize you have a slim chance of surviving you shoot him in the head and the clown seems dead and you cried out in relief and you chose to change your dream environment to a better and more peaceful one. but what you did not notice is the clown is far from dead and is watching you this very moment. what will you do? wake up or think of a way to remove the clown from your dreams?")
