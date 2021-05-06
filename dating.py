@@ -32,6 +32,18 @@ Entering the hallway, you see Jess in their loose and baggy clothing quickly shu
 JESS: You didn't see anything!
 """)
 
+ari_win = Room("""
+You and Ari have forged a bond of Friendship!
+""")
+
+mark_win = Room("""
+You and Mark have deepened your bond!
+""")
+
+jess_win = Room("""
+You and Jess have deepened your bond!
+""")
+
 nightmare_desk = Room("""
 The area around the desks starts to become oddly geometric, with sudden angles and geometric faces emerging out of nowhere. Ari then starts to convulse as her limbs extend and contort as she becomes more angular in appearence, with her head becoming the shape of a nonogon.
 """)
@@ -42,6 +54,18 @@ The hallway outside the classroom bends and warps in unusual ways, as Jess' body
 
 nightmare_corner = Room("""
 Nightmare Mark is a work in progress, but it's responce is still operational.
+""")
+
+ari_terror = Room("""
+You have now become a part of the nonogon horror!!!
+""")
+
+mark_terror = Room("""
+!!!
+""")
+
+jess_terror = Room("""
+You have been consumed by the entity once known as Jess!!!
 """)
 
 ari = Item("ari")
@@ -93,13 +117,46 @@ def go_ari():
 def ask_ari():
   global current_room
   if current_room == ari_desk:
-    print("Ari looks suprised when you ask if she needs help. ARI: Oh! Well, I do need help actualy, I'm working on some geometry homework, but I am horible at math. Can you take a look at this?  She shows you the problem in the textbook.")
+    print("Ari looks suprised when you ask if she needs help. ARI: Oh! Well, I do need help actualy, I'm working on some geometry homework, but I am horible at math. Can you take a look at this?  She shows you the problem in the textbook: 8=8(x-8) find x.")
     ari.helpless = False
+    set_context('ari_math')
   elif current_room == nightmare_desk:
     print(f"ARI: I am perfectly fine {name}. All nine of my sides are together in perfect harmony. Do you wish to join us {name}?")
     ari.helpless = False
   else:
     print("Ari isn't here!")
+
+@when("the answer is 9", context='ari_math')
+@when("9", context='ari_math')
+def math_ari():
+  global current_room
+  if current_room == ari_desk:
+    print(f"ARI: Thanks for the help {name}!")
+    current_room = ari_win
+    print(current_room)
+  elif current_room == nightmare_desk:
+    print(f"ARI: {name}! You are now one of my nine sides!")
+    current_room = ari_terror
+    print(current_room)
+  else:
+    print("Ari isn't here!")
+
+@when("i dont know", context='ari_math')
+def wrong_ari():
+  global current_room
+  if current_room == ari_desk:
+    print("Ari looks disapointed. ARI: Oh, well that's a shame...")
+    ari.nightmare = True
+    current_room = nightmare_desk
+    print(current_room)
+    set_context('ari_desk')
+  elif current_room == nightmare_desk:
+    print(f"ARI: {name}! You are now one of my nine sides!")
+    current_room = ari_terror
+    print(current_room)
+  else:
+    print("Ari isn't here!")
+
 
 
 @when("go to jess", context='your_desk')
