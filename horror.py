@@ -37,14 +37,22 @@ def wise_choice_peasant():
 @when("remove the clown", context="decision3")
 def game_of_wills():
   set_context("final decision")
-  print(f"you realize you can still controll your dreams and you decide to will away the clown. the clown begins to fade away but as it fades it leaves a black void that begins consuming everything around it. you decide to wake up and you find out your house is on fire. your roomate screams your name. {name} THE HOUSE IS ON FIRE WE HAVE TO LEAVE. you get up still in a daze as smoke fills your lungs. there is a way out through your window but there is a 20 feet drop which will break some bones. you have 2 options sit and die or jump. ")
+  print(f"you realize you can still control your dreams and you decide to will away the clown. the clown begins to fade away but as it fades it leaves a black void that begins consuming everything around it. you decide to wake up and you find out your house is on fire. your roomate screams your name. {name} THE HOUSE IS ON FIRE WE HAVE TO LEAVE. you get up still in a daze as smoke fills your lungs. there is a way out through your window but there is a 20 feet drop which will break some bones. you have 2 options sit and die or jump. ")
 
 @when("wake up", context="decision3")
 def death_by_blaze():
   print(f"you wake up and a fire has consumed your bed in flams and as it begins to consume your body you realize its hopeless and you turn to your side to die. as you look at the clock before your end you see the time. 5:00PM game over {name} your dead")
 
+@when("jump", context="final decision")
+def oof_your_hospital_biil():
+  print(f"you jump and as you fall you hear your bones crunch under you. you can no longer walk but you survived {name} you are pulled into an ambulance and firefighters put out the flames in the house. what the firefighters said started the fire is the most unsettling thing to you. the accelerant... was paper and gasoline.. but not any paper it was confetti paper.. what clowns use. and whats more is there was a note left on your door and it reads the following. see you at the hospital {name} as you recieve these news the police start an investigation into the arson and they uncover other instances of this happening to other people and find links between the incidents... but your not worried about that. because in the corner of your room... he sees you ******end of game******")
 
 
+
+@when("sit and burn", context="final decision")
+def are_you_dumb():
+  set_context("final decision")
+  print(f"you realize its hopeless and you just sit there and die. {name} died in arson fire. 4/22/1999-5/6/21")
 
 
 
