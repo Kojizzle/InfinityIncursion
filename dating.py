@@ -94,7 +94,7 @@ def oh_no():
   print("you will regret this")
   ari.nightmare = True
   jess.nightmare = True
-  mark.nightmare = True
+  
 
 @when("go to ari", context='your_desk')
 @when("walk to ari", context='your_desk')
@@ -122,12 +122,13 @@ def ask_ari():
     set_context('ari_math')
   elif current_room == nightmare_desk:
     print(f"ARI: I am perfectly fine {name}. All nine of my sides are together in perfect harmony. Do you wish to join us {name}?")
+    set_context('ari_math')
     ari.helpless = False
   else:
     print("Ari isn't here!")
 
-@when("the answer is 9", context='ari_math')
-@when("9", context='ari_math')
+@when("the answer is nine", context='ari_math')
+@when("nine", context='ari_math')
 def math_ari():
   global current_room
   if current_room == ari_desk:
@@ -139,6 +140,7 @@ def math_ari():
     print(f"ARI: {name}! You are now one of my nine sides!")
     current_room = ari_terror
     print(current_room)
+    set_context('ari_terror')
   else:
     print("Ari isn't here!")
 
@@ -155,6 +157,7 @@ def wrong_ari():
     print(f"ARI: {name}! You are now one of my nine sides!")
     current_room = ari_terror
     print(current_room)
+    set_context('ari_terror')
   else:
     print("Ari isn't here!")
 
@@ -234,6 +237,7 @@ def ugly_jess():
     print(f"The mawed creature surrounds you...")
     current_room = jess_terror
     print(current_room)
+    set_context('jess_terror')
   else:
     print("Jess isn't here!")
 
@@ -274,6 +278,7 @@ def sports_mark():
   if current_room == mark_corner:
     print(f"Hell yeah {name}! I can read this later, let's go down to the track and do something else.")
     current_room = mark_win
+    set_context('mark_win')
     print(current_room)
   else:
     print("Mark isn't here!")
@@ -291,6 +296,33 @@ def sports_mark():
     print("Mark isn't here!")
 
 
+@when("return to lobby", context='ari_win')
+def ari_win_return():
+  set_context('lobby')
+  current_room = lobby 
 
+@when("return to lobby", context='jess_win')
+def jess_win_return():
+  set_context('lobby')
+  current_room = lobby 
 
+@when("return to lobby", context='mark_win')
+def mark_win_return():
+  set_context('lobby')
+  current_room = lobby 
+
+@when("return to lobby", context='ari_terror')
+def ari_terror_return():
+  set_context('lobby')
+  current_room = lobby 
+
+@when("return to lobby", context='jess_terror')
+def jess_terror_return():
+  set_context('lobby')
+  current_room = lobby 
+
+@when("return to lobby", context='mark_terror')
+def mark_terror_return():
+  set_context('lobby')
+  current_room = lobby 
 
