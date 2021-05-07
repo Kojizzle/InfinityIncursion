@@ -1,5 +1,5 @@
 from adventurelib import *
-name=str(input("enter your name: "))
+from name import *
 
 set_context('your_desk')
 your_desk = Room("""
@@ -61,7 +61,7 @@ You have now become a part of the nonogon horror!!!
 """)
 
 mark_terror = Room("""
-!!!
+You and Mark are no longer as close of friends!!!
 """)
 
 jess_terror = Room("""
@@ -131,9 +131,10 @@ def ask_ari():
 def math_ari():
   global current_room
   if current_room == ari_desk:
-    print(f"ARI: Thanks for the help {name}!")
+    print(f"ARI: Oh! So it is! Thanks for the help {name}!")
     current_room = ari_win
     print(current_room)
+    set_context('ari_win')
   elif current_room == nightmare_desk:
     print(f"ARI: {name}! You are now one of my nine sides!")
     current_room = ari_terror
@@ -190,11 +191,51 @@ def ask_jess():
     print(f"JESS: {name} I swear, if you tell ANYONE, I will end you!" + 
     "They open their bag and show you a little white mouse with beady little eyes." + "JESS: I found him in the trash and I thought that he was too cute to just ignore, what do you think of him?")
     jess.fluff = True
+    set_context('jess_fluff')
   elif current_room == nightmare_hallway:
     print(f" The being once known as Jess speaks from their gnashing toothy maw. JESS: {name}! There is no bag {name}! We are many {name}! What do you think of us {name}?")
     jess.fluff = True
+    set_context('jess_fluff')
   else:
     print("Jess and their bag aren't here!")
+
+@when("tell them you think the mouse is cute", context='jess_fluff')
+@when("tell jess you think the mouse is cute", context='jess_fluff')
+@when("you think he is cute", context='jess_fluff')
+@when("you think they are cute", context='jess_fluff')
+def cute_jess():
+  global current_room
+  if current_room == jess_hallway:
+    print(f"Jess seems very glad that you like her new friend. JESS: Great! So that means you won't report us to the administration, right {name}?")
+    set_context('jess_win')
+    current_room = jess_win
+  elif current_room == nightmare_hallway:
+    print(f"The mawed creature surrounds you...")
+    set_context('jess_terror')
+    current_room = jess_terror
+    print(current_room)
+  else:
+    print("Jess and their bag aren't here!")
+
+@when("tell them you think the mouse is ugly", context='jess_fluff')
+@when("tell jess you think the mouse is ugly", context='jess_fluff')
+@when("you think the mouse is ugly", context='jess_fluff')
+@when("you think they are ugly", context='jess_fluff')
+@when("you think they are scary", context='jess_fluff')
+def ugly_jess():
+  global current_room
+  if current_room == jess_hallway:
+    print(f"You didn't have to be rude about it {name}!")
+    jess.nightmare = True
+    current_room = nightmare_hallway
+    print(current_room)
+    set_context('jess_hallway')
+  elif current_room == nightmare_hallway:
+    print(f"The mawed creature surrounds you...")
+    current_room = jess_terror
+    print(current_room)
+  else:
+    print("Jess isn't here!")
 
 
 @when("go to mark", context='your_desk')
@@ -219,9 +260,37 @@ def ask_mark():
   if current_room == mark_corner:
     print(f"Mark looks up from his book. MARK: Oh hey! I'm just reading this stupid book for my English class. I need to get my mind of this book. Hey {name}, would you rather play sports or read books?")
     mark.book = True
+    set_context('mark_question')
   elif current_room == nightmare_corner:
     print("wip nightmare mark")
     mark.book = True
+    set_context('mark_question')
   else:
     print("Mark isn't here!")
+
+@when("you like sports more than reading", context='mark_question')
+def sports_mark():
+  global current_room
+  if current_room == mark_corner:
+    print(f"Hell yeah {name}! I can read this later, let's go down to the track and do something else.")
+    current_room = mark_win
+    print(current_room)
+  else:
+    print("Mark isn't here!")
+
+@when("you like reading more than sports", context='mark_question')
+def sports_mark():
+  global current_room
+  if current_room == mark_corner:
+    print(f"Oh. Really? Man I totaly thought you liked sports more...")
+    mark.nightmare = True
+    current_room = mark_terror
+    print(current_room)
+    set_context('mark_terror')
+  else:
+    print("Mark isn't here!")
+
+
+
+
 
